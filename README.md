@@ -34,3 +34,22 @@ This project demonstrates the deployment of a highly available, self-healing Ngi
 The cluster was initialized using Minikube with a Docker driver on an AWS EC2 instance.
 ```bash
 minikube start --driver=docker
+### 2. Single Pod Deployment
+Initial testing was performed using a standalone Pod (pod.yaml) to verify container connectivity.
+
+```Bash
+
+kubectl apply -f pod.yaml
+### 3. Production Scaling (Deployment)
+To ensure high availability, a Deployment was created to manage a ReplicaSet.
+
+```Bash
+
+kubectl apply -f deployment.yml
+kubectl scale deployment zubi-deployment --replicas=10
+### 4. Verification
+Checked the status of the "Army of Pods" to ensure all instances were in the Running state.
+
+```Bash
+
+kubectl get pods -o wide
