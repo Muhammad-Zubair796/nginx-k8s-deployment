@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zubi-deployment
+spec:
+  replicas: 3          # This tells K8s to always keep 3 pods running
+  selector:
+    matchLabels:
+      app: webserver   # This tells the manager which pods to watch
+  template:            # This is the "blueprint" for the pods
+    metadata:
+      labels:
+        app: webserver # These labels MUST match the selector above
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80
