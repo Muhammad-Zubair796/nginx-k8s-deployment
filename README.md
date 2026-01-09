@@ -5,8 +5,8 @@ This project demonstrates the deployment of a highly available, self-healing Ngi
 ---
 
 ## 📸 Architecture & Verification
-![Kubernetes Pod Cluster Visualization](deployment.PNG)
-*Above: A visual representation of the 10-replica Nginx army running within the Minikube cluster.*
+![Kubernetes Pod Cluster Visualization](deployment.PNG)(capture.PNG)
+*Above: A visual representation of the 10-replica Nginx running within the Minikube cluster.*
 
 ---
 
